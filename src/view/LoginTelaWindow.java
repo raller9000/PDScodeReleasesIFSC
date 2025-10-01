@@ -72,7 +72,6 @@ public class LoginTelaWindow extends JFrame {
                         JOptionPane.showMessageDialog(null, "Produto não existe ou sem estoque");
                     } else {
                         Produto p = produtoCtrl.buscarPorId(id);
-                        // show the added product in cart
                         listModel.addElement(p.getId() + " - " + p.getNome() + " R$" + p.getPreco());
                     }
                     tfIdProduto.setText("");

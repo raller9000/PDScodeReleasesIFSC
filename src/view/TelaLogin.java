@@ -64,12 +64,10 @@ public class TelaLogin extends JFrame {
                 }
 
                 if (u.isAdmin()) {
-                    // admin: open main admin screen
                     TelaMain adm = new TelaMain(u);
                     adm.setVisible(true);
                     dispose();
                 } else {
-                    // cliente: open caixa
                     LoginTelaWindow caixa = new LoginTelaWindow(u);
                     caixa.setVisible(true);
                     dispose();

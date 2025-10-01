@@ -8,6 +8,8 @@ public class FabricaConexao {
     private static final String USER = "root";
     private static final String SENHA = "";
 
+    //Prof coloca tua senha aqui se for diferente de vazio, obg :3
+
     public static Connection getConnection() {
         try {
             return DriverManager.getConnection(URL, USER, SENHA);

@@ -18,7 +18,7 @@ public class UsuarioDAO {
             ps.executeUpdate();
 
         } catch (Exception e) {
-            System.out.println("Erro ao inserir usuário: " + e.getMessage());
+            System.out.println("Erro: " + e.getMessage());
         }
     }
 
@@ -42,7 +42,7 @@ public class UsuarioDAO {
             }
 
         } catch (Exception e) {
-            System.out.println("Erro ao buscar usuário: " + e.getMessage());
+            System.out.println("Erro: " + e.getMessage());
         }
         return null;
     }
