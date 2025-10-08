@@ -2,7 +2,7 @@ package view;
 
 import javax.swing.*;
 import java.awt.event.*;
-import controlador.LoginControlador;
+import controller.LoginControlador;
 import model.Usuario;
 
 public class TelaLogin extends JFrame {

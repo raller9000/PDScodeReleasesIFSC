@@ -1,13 +1,13 @@
 package dao;
 
-import model.Usuario;
 import java.sql.*;
+import model.Usuario;
 
 public class UsuarioDAO {
 
     public void inserir(Usuario u) {
         String sql = "INSERT INTO usuarios (nome, cpf, email, senha, admin) VALUES (?,?,?,?,?)";
-        try (Connection c = FabricaConexao.abrirConexao();
+        try (Connection c = FabricaConexao.getConnection();
              PreparedStatement ps = c.prepareStatement(sql)) {
 
             ps.setString(1, u.getNome());
@@ -24,7 +24,7 @@ public class UsuarioDAO {
 
     public Usuario buscarPorCpf(String cpf) {
         String sql = "SELECT * FROM usuarios WHERE cpf = ?";
-        try (Connection c = FabricaConexao.abrirConexao();
+        try (Connection c = FabricaConexao.getConnection();
              PreparedStatement ps = c.prepareStatement(sql)) {
 
             ps.setString(1, cpf);

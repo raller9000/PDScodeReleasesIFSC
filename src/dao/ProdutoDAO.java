@@ -1,15 +1,15 @@
 package dao;
 
-import model.Produto;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import model.Produto;
 
 public class ProdutoDAO {
 
     public void inserir(Produto p) {
         String sql = "INSERT INTO produtos (nome, preco, estoque) VALUES (?,?,?)";
-        try (Connection c = FabricaConexao.abrirConexao();
+        try (Connection c = FabricaConexao.getConnection();
              PreparedStatement ps = c.prepareStatement(sql)) {
 
             ps.setString(1, p.getNome());
@@ -25,7 +25,7 @@ public class ProdutoDAO {
     public List<Produto> listar() {
         List<Produto> lista = new ArrayList<>();
         String sql = "SELECT * FROM produtos";
-        try (Connection c = FabricaConexao.abrirConexao();
+        try (Connection c = FabricaConexao.getConnection();
              Statement st = c.createStatement();
              ResultSet rs = st.executeQuery(sql)) {
 

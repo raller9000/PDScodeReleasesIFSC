@@ -1,10 +1,8 @@
 package view;
 
-package telasFinal;
-
 import javax.swing.*;
 import java.awt.event.*;
-import controlador.ProdutoControlador;
+import controller.ProdutoControlador;
 import model.Produto;
 import model.Usuario;
 import java.util.List;

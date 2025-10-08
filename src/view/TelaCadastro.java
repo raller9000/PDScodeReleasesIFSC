@@ -2,7 +2,7 @@ package view;
 
 import javax.swing.*;
 import java.awt.event.*;
-import controlador.CadastroUsuarioControlador;
+import controller.CadastroUsuarioControlador;
 
 public class TelaCadastro extends JFrame {
     private JTextField tfNome, tfCpf, tfEmail;

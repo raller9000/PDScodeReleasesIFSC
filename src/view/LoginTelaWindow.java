@@ -2,8 +2,8 @@ package view;
 
 import javax.swing.*;
 import java.awt.event.*;
-import controlador.ProdutoControlador;
-import controlador.CompraControlador;
+import controller.ProdutoControlador;
+import controller.CompraControlador;
 import model.Produto;
 import model.Usuario;
 import java.util.List;
