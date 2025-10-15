@@ -10,7 +10,7 @@ public class ProdutoDAO {
     public void inserir(Produto p) {
         String sql = "INSERT INTO produtos (nome, preco, estoque) VALUES (?,?,?)";
         try (Connection c = FabricaConexao.getConnection();
-             PreparedStatement ps = c.prepareStatement(sql)) {
+                PreparedStatement ps = c.prepareStatement(sql)) {
 
             ps.setString(1, p.getNome());
             ps.setDouble(2, p.getPreco());
@@ -26,16 +26,15 @@ public class ProdutoDAO {
         List<Produto> lista = new ArrayList<>();
         String sql = "SELECT * FROM produtos";
         try (Connection c = FabricaConexao.getConnection();
-             Statement st = c.createStatement();
-             ResultSet rs = st.executeQuery(sql)) {
+                Statement st = c.createStatement();
+                ResultSet rs = st.executeQuery(sql)) {
 
             while (rs.next()) {
                 Produto p = new Produto(
-                    rs.getInt("id"),
-                    rs.getString("nome"),
-                    rs.getDouble("preco"),
-                    rs.getInt("estoque")
-                );
+                        rs.getInt("id"),
+                        rs.getString("nome"),
+                        rs.getDouble("preco"),
+                        rs.getInt("estoque"));
                 lista.add(p);
             }
 
@@ -44,4 +43,14 @@ public class ProdutoDAO {
         }
         return lista;
     }
+
+    public Produto buscarPorId(int id) {
+        for (Produto p : listar()) {
+            if (p.getId() == id) {
+                return p;
+            }
+        }
+        return null;
+    }
+
 }

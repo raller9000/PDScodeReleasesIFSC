@@ -1,7 +1,10 @@
-import javax.swing.SwingUtilities;
-import telasFinal.TelaLogin;
+package default_package;
 
-package src;
+import javax.swing.SwingUtilities;
+import controller.*;
+import dao.*;
+import model.*;
+import view.*;
 
 public class Main {
     public static void main(String[] args) {

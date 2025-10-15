@@ -5,9 +5,20 @@ import model.Produto;
 import model.Usuario;
 import model.NotaFiscal;
 
-public class CompraControlador {
+public class CompraController {
 
     private Carrinho carrinho = new Carrinho();
+
+    public boolean adicionarPorId(int id) {
+        ProdutoController produtoCtrl = new ProdutoController();
+        Produto produto = produtoCtrl.buscarPorId(id);
+        if (produto == null || produto.getEstoque() <= 0) {
+            return false;
+        }
+        getCarrinho().adicionarProduto(produto);
+        produto.setEstoque(produto.getEstoque() - 1);
+        return true;
+    }
 
     public void adicionar(Produto p) {
         carrinho.adicionarProduto(p);

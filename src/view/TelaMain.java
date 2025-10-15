@@ -2,7 +2,7 @@ package view;
 
 import javax.swing.*;
 import java.awt.event.*;
-import controller.ProdutoControlador;
+import controller.ProdutoController;
 import model.Produto;
 import model.Usuario;
 import java.util.List;
@@ -13,7 +13,7 @@ public class TelaMain extends JFrame {
     private JButton btnCadastrarProduto;
     private JButton btnListar;
     private JButton btnLogout;
-    private ProdutoControlador produtoCtrl = new ProdutoControlador();
+    private ProdutoController produtoCtrl = new ProdutoController();
 
     public TelaMain(Usuario u) {
         this.usuario = u;
@@ -45,11 +45,12 @@ public class TelaMain extends JFrame {
                 JTextField tfPreco = new JTextField();
                 JTextField tfEstoque = new JTextField();
                 Object[] fields = {
-                    "Nome:", tfNome,
-                    "Preco:", tfPreco,
-                    "Estoque:", tfEstoque
+                        "Nome:", tfNome,
+                        "Preco:", tfPreco,
+                        "Estoque:", tfEstoque
                 };
-                int option = JOptionPane.showConfirmDialog(null, fields, "Cadastrar Produto", JOptionPane.OK_CANCEL_OPTION);
+                int option = JOptionPane.showConfirmDialog(null, fields, "Cadastrar Produto",
+                        JOptionPane.OK_CANCEL_OPTION);
                 if (option == JOptionPane.OK_OPTION) {
                     try {
                         String nome = tfNome.getText().trim();
@@ -90,4 +91,3 @@ public class TelaMain extends JFrame {
         });
     }
 }
-

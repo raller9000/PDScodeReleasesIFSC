@@ -2,7 +2,7 @@ package view;
 
 import javax.swing.*;
 import java.awt.event.*;
-import controller.LoginControlador;
+import controller.LoginController;
 import model.Usuario;
 
 public class TelaLogin extends JFrame {
@@ -10,7 +10,7 @@ public class TelaLogin extends JFrame {
     private JTextField tfCpf;
     private JButton btnEntrar;
     private JButton btnCadastrar;
-    private LoginControlador loginCtrl = new LoginControlador();
+    private LoginController loginCtrl = new LoginController();
 
     public TelaLogin() {
         setTitle("Login - Supermercado");

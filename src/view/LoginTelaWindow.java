@@ -2,8 +2,8 @@ package view;
 
 import javax.swing.*;
 import java.awt.event.*;
-import controller.ProdutoControlador;
-import controller.CompraControlador;
+import controller.ProdutoController;
+import controller.CompraController;
 import model.Produto;
 import model.Usuario;
 import java.util.List;
@@ -18,8 +18,8 @@ public class LoginTelaWindow extends JFrame {
     private JButton btnFinalizar;
     private JList<String> listaCarrinho;
     private DefaultListModel<String> listModel;
-    private ProdutoControlador produtoCtrl = new ProdutoControlador();
-    private CompraControlador compraCtrl = new CompraControlador();
+    private ProdutoController produtoCtrl = new ProdutoController();
+    private CompraController compraCtrl = new CompraController();
 
     public LoginTelaWindow(Usuario u) {
         this.usuario = u;
@@ -99,7 +99,8 @@ public class LoginTelaWindow extends JFrame {
                         if (encontrado != null) {
                             compraCtrl.remover(encontrado);
                             listModel.remove(idx);
-                            JOptionPane.showMessageDialog(null, "Removido do carrinho (nota: estoque não é restaurado nesta versão)");
+                            JOptionPane.showMessageDialog(null,
+                                    "Removido do carrinho (nota: estoque não é restaurado nesta versão)");
                         } else {
                             JOptionPane.showMessageDialog(null, "Produto não encontrado no carrinho");
                         }
@@ -121,7 +122,8 @@ public class LoginTelaWindow extends JFrame {
                 String nota = compraCtrl.finalizar(usuario);
                 JTextArea ta = new JTextArea(nota);
                 ta.setEditable(false);
-                JOptionPane.showMessageDialog(null, new JScrollPane(ta), "Nota Fiscal", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, new JScrollPane(ta), "Nota Fiscal",
+                        JOptionPane.INFORMATION_MESSAGE);
                 listModel.clear();
             }
         });

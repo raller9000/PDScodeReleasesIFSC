@@ -3,7 +3,7 @@ package controller;
 import dao.UsuarioDAO;
 import model.Usuario;
 
-public class LoginControlador {
+public class LoginController {
 
     private UsuarioDAO usuarioDAO = new UsuarioDAO();
 

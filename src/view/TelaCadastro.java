@@ -2,14 +2,14 @@ package view;
 
 import javax.swing.*;
 import java.awt.event.*;
-import controller.CadastroUsuarioControlador;
+import controller.CadastroUsuarioController;
 
 public class TelaCadastro extends JFrame {
     private JTextField tfNome, tfCpf, tfEmail;
     private JPasswordField pfSenha;
     private JCheckBox cbAdmin;
     private JButton btnSalvar;
-    private CadastroUsuarioControlador ctrl = new CadastroUsuarioControlador();
+    private CadastroUsuarioController ctrl = new CadastroUsuarioController();
 
     public TelaCadastro() {
         setTitle("Cadastro de Usuário");
