@@ -1,4 +1,4 @@
-package default_package;
+package defaultpackage;
 
 import javax.swing.SwingUtilities;
 import controller.*;
